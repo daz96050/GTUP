@@ -11,13 +11,18 @@ local base_range = (ap.range or 18)
 local base_cooldown = ap.cooldown or 6
 local base_sps = 60 / base_cooldown
 
-local function make_mk(n, prev_name, extra_ingredients, total_range_over_base, prev_sps)
+local function make_mk(n, prev_name, extra_ingredients, total_range_over_base, prev_sps, next_tier)
   local name = "gun-turret-mk"..n
   -- ENTITY
   local ent = table.deepcopy(base)
   ent.name = name
   ent.minable = {mining_time = 0.5, result = name}
   ent.fast_replaceable_group = "gun-turret"
+  if next_tier then
+    ent.next_upgrade = "gun-turret-mk" .. next_tier
+  else
+    ent.next_upgrade = nil
+  end
   ent.icons = {
     {icon="__base__/graphics/icons/gun-turret.png", icon_size=64, icon_mipmaps=4},
     {icon="__gun-turret-upgrade-pack__/graphics/icons/mk"..n.."-overlay.png", icon_size=64, scale=1.0}
@@ -58,24 +63,24 @@ end
 local mk2_name, mk2_sps = make_mk(2, "gun-turret", {
   {type="item", name="steel-plate", amount=20},
   {type="item", name="electronic-circuit", amount=20}
-}, 2, base_sps)
+}, 2, base_sps, 3)
 
 -- MK3
 local mk3_name, mk3_sps = make_mk(3, mk2_name, {
   {type="item", name="electric-engine-unit", amount=10},
   {type="item", name="advanced-circuit", amount=20}
-}, 4, mk2_sps)
+}, 4, mk2_sps,4)
 
 -- MK4
 local mk4_name, mk4_sps = make_mk(4, mk3_name, {
   {type="item", name="battery", amount=20},
   {type="item", name="electric-engine-unit", amount=20},
   {type="item", name="electronic-circuit", amount=40}
-}, 6, mk3_sps)
+}, 6, mk3_sps,5)
 
 -- MK5
 local mk5_name, mk5_sps = make_mk(5, mk4_name, {
   {type="item", name="processing-unit", amount=20},
   {type="item", name="copper-cable", amount=100},
   {type="item", name="low-density-structure", amount=20}
-}, 8, mk4_sps)
+}, 8, mk4_sps, nil)
