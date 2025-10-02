@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2025-10-01
+  Feature:
+    - Add fast-replace group for upgrade planner to automatically update default turrets
+    - Update fast-replace group for upgrade planner to allow any tier change
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2025-09-20
+  BugFix:
+    - Fixed issue
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2025-09-09
+  Feature:
+    - Initial Release
+

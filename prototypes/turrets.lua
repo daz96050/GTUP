@@ -17,7 +17,7 @@ local function make_mk(n, prev_name, extra_ingredients, total_range_over_base, p
   local ent = table.deepcopy(base)
   ent.name = name
   ent.minable = {mining_time = 0.5, result = name}
-  ent.fast_replaceable_group = "gun-turret"
+  ent.fast_replaceable_group = "ammo-turret"
   if next_tier then
     ent.next_upgrade = "gun-turret-mk" .. next_tier
   else
