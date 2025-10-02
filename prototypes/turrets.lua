@@ -3,6 +3,7 @@ local dm_active = mods and mods["distant-misfires"]
 local RANGE_BONUS_DM = dm_active and 4 or 0
 
 local base = table.deepcopy(data.raw["ammo-turret"]["gun-turret"])
+data.raw["ammo-turret"]["gun-turret"].next_upgrade = "gun-turret-mk2"
 local base_item = table.deepcopy(data.raw.item["gun-turret"])
 
 local ap = base.attack_parameters or {}
