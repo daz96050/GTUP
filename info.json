@@ -1,0 +1,13 @@
+{
+  "name": "gun-turret-upgrade-pack",
+  "version": "1.1.1",
+  "title": "Gun Turret Upgrade Pack",
+  "author": "Silenteum",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0.0",
+    "? distant-misfires",
+    "? quality"
+  ],
+  "description": "Adds Gun Turret MK2–MK5 (+2 range & +2 shots/sec each tier). If 'distant-misfires' is active, vanilla and MK turrets get +4 range. Quality-ready recipes. No runtime scripts. Roman numeral overlays."
+}
